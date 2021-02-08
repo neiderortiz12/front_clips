@@ -12,14 +12,17 @@
 
         <!-- Login Form -->
         <form v-on:submit.prevent="login" >
-          <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario" v-model="usuario"> 
-          <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
+          <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email" v-model="email"> 
+          <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
           <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
 
-        <!-- Remind Passowrd -->
+        <!-- Remind Passowrd 
         <div id="formFooter">
           <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>-->
+        <div class="alert alert-danger" role="alert" v-if="error">
+          {{error_ms}}
         </div>
 
       </div>
@@ -40,7 +43,7 @@ export default {
   data: function(){
     
     return {
-      usuario:"",
+      email:"",
       password:"",
       error:false,
       error_ms:"",
@@ -49,12 +52,19 @@ export default {
   methods:{
     login(){
       let json = {
-        "usuario": this.usuario,
+        "email": this.email,
         "password": this.password
       };
       axios.post('http://localhost:8000/api/login',json)
       .then(data => {
-        console.log(data);
+        if (data.data.res == true){
+          localStorage.token = data.data.token;
+          console.log("todo correcto");
+          this.$router.push('dashboard');
+        }else{
+          this.error=true;
+          this.error_ms=data.data.message;
+        }
       })
     }
     
@@ -180,7 +190,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
