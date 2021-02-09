@@ -2,14 +2,13 @@
     <div>
         <Header/>
         
-            <div>
-                <div v-for="clips in ListaClips" :key="clips.id" class="col-xs-6 col-sm-4 col-md-3 text-center">
-                    <a href="http://www.google.com">
-                        <h1>{{clips.id}}</h1>
-                        <h1>{{clips.nombre}}</h1>
-                        
-                        
-                    </a>
+            <div class="dash" >
+                <div  v-for="clips in ListaClips" :key="clips.id">
+                               
+                        <video style="height:200px" ref="video" controls>
+                            <source :src="'http://localhost/apiclips' + clips.clip" type="video/mp4">
+                        </video>
+                    
                 </div>
                 
                 
@@ -45,6 +44,13 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style scoped>
+.dash {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
 
 </style>
