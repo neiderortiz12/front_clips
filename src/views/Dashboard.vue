@@ -35,7 +35,13 @@ export default {
     },
     mounted:function(){
         let direccion = "http://localhost:8000/api/clips";
-        axios.get(direccion).then(data =>{
+        /*axios.get({ url:direccion,
+            headers:{
+                Authorization:'Bearer '+localStorage.getItem('token')
+            }
+            this.ListaClips=data.data;
+        });*/
+        axios.get(direccion,{headers:{Authorization:'Bearer '+localStorage.getItem('token')}}).then(data =>{
             console.log(data);
             this.ListaClips= data.data;
         });
@@ -49,7 +55,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
   grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+  
 }
 
 
