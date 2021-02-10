@@ -1,40 +1,33 @@
 <template>
     <div ><!--:style="myStyle"-->
         <Header />
-
+<h1>Feed</h1>
         <div class="dash">
-            <div  v-for="clips in ListaClips" :key="clips.id">
-                               
-                        <video style="height:200px" ref="video" controls>
-                            <source :src="'http://localhost/apiclips' + clips.clip" type="video/mp4">
-                        </video>
-                    
+    <!--  <div  v-for="clips in ListaClips" :key="clips.id">
+                    <video style="height:200px" ref="video" controls>
+                        <source :src="'http://localhost/apiclips' + clips.clip" type="video/mp4">
+                    </video>
             </div>
-        </div>
-            <!--
+        </div>-->
+
             <b-container fluid="lg" class="bv-example-row">
                 <b-row cols="4" class="row-cols-4" >
                     <div v-for="clips in ListaClips" :key="clips.id" class="">
                         <b-col class="videoWrapper ">
-                            
                             <div class="border border-dark rounded-lg ">
                                 <video  @mouseover="repro()" width="250" height="250" id="clips.nombre" ref="video" controls>
                                     <source :src="'http://localhost/clips' + clips.clip" type="video/mp4" />
                                 </video>
-                                <h1>{{ clips.nombre }}</h1>
-                               
+                                <a class="underlineHover" href="/video"><h1>{{ clips.nombre }}</h1></a>
+                                
                             </div>
-                            
                         </b-col>
-                         <br>
-                         <br>
-                         <br>
-                         <br><br>
-                         <br>
+                            <br>
+                            
                     </div>
-               </b-row>
+                </b-row>
             </b-container>
-        </div>-->
+        </div>
 
         <Footer />
     </div>

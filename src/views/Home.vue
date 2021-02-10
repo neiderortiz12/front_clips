@@ -7,20 +7,28 @@
 
         <!-- Icon -->
         <div class="fadeIn first">
-          <img src="@/assets/user2.jpeg" id="icon" alt="User Icon" />
+          <img src="@/assets/user1.jpeg" id="icon" alt="User Icon" />
         </div>
 
         <!-- Login Form -->
         <form v-on:submit.prevent="login" >
           <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email" v-model="email"> 
           <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
-          <input type="submit" class="fadeIn fourth" value="Log In">
+          <input type="submit" class="fadeIn fourth" value="Entrar">
         </form>
+        
 
+        
         <!-- Remind Passowrd 
         <div id="formFooter">
           <a class="underlineHover" href="#">Forgot Password?</a>
         </div>-->
+
+        <div id="formFooter">
+          No tienes cuenta,
+          <a class="underlineHover" href="/register">crea una!</a>
+        </div>
+
         <div class="alert alert-danger" role="alert" v-if="error">
           {{error_ms}}
         </div>

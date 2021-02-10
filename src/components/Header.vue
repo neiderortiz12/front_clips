@@ -2,7 +2,7 @@
     
     <div >
     <b-navbar toggleable="lg" bg-variant="dark" type="light" variant="primary">
-        <b-navbar-brand href="#">
+        <b-navbar-brand href="/dashboard">
             <img src="@/assets/bamo1.png" class="d-inline-block align-top" alt="logo">
             Clips
         </b-navbar-brand>
@@ -11,9 +11,9 @@
 
         <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-            <b-nav-item href="#">Inicio</b-nav-item>
-            <b-nav-item href="#">Crear</b-nav-item>
-            <b-nav-item href="#">Nosotros</b-nav-item>
+            <b-nav-item href="/dashboard">Inicio</b-nav-item>
+            <b-nav-item href="/newclip">Crear</b-nav-item>
+            <b-nav-item href="/about">Nosotros</b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->

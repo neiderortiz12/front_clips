@@ -1,29 +1,31 @@
 <template>
     <div>
         <Header/>
+        <h1>Creación de un nuevo clip</h1>
+        <h2 class="mt-4">Para añadir un nuevo clip, registra los siguientes datos</h2>
         <div class="container">
-            <form ction="" v-on:submit.prevent="createNewClip();"  enctype="multipart/form-data">
-                <div >
-                    <label for="" >Nombre</label>
+            <form action="" v-on:submit.prevent="createNewClip();" class="form-clip" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="" class="label">Nombre</label>
                     <div >
-                        <input type="text" name="nombre" id="nombre" v-model="form.nombre">
+                        <input class="form-control"  placeholder="Nombre" type="text" name="nombre" id="nombre" v-model="form.nombre">
                     </div>
                 </div>
-                <div >
-                        <label for="" >clip</label>
+                <div class="form-group">
+                        <label for="" >Clip</label>
                         <div >
-                            <input type="file" @change="processFile($event)" >
+                            <input class="form-control" type="file" @change="processFile($event)" >
+                        </div>
+                </div>
+                <div class="form-group">
+                        <label for="" >Descripcion</label>
+                        <div >
+                            <input class="form-control"  placeholder="Descripcion" type="text" name="descripcion" id="descripcion" v-model="form.descripcion">
                         </div>
                 </div>
                 <div >
-                        <label for="" >descripcion</label>
                         <div >
-                            <input type="text" name="descripcion" id="descripcion" v-model="form.descripcion">
-                        </div>
-                </div>
-                <div >
-                        <div >
-                            <input type="submit" value="Crear">
+                            <button class="card-form__button"  type="submit" >Crear</button>
                         </div>
                 </div>
             </form>
@@ -90,5 +92,36 @@ export default {
 </script>
 
 <style scoped>
+
+
+.card-form__button{
+    max-width: 600px;
+    margin: auto;
+    width: 100%;
+    height: 55px;
+    background: #2364d2;
+    border: none;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.form-clip{
+    text-align: left;
+    font-size: 16px;
+    width: 500px;
+    padding: 15px 30px;
+    border-radius: 4px;
+    margin: 50px auto;
+    width: 500px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.label {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
 
 </style>

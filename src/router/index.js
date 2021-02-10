@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Dashboard from  '../views/Dashboard.vue'
 import NewClip from '../views/NewClip.vue'
 import Register from '../views/Register.vue'
+import Video from '../views/Video.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -34,7 +35,12 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register
-  }
+  },
+  {
+    path: '/video',
+    name: 'Video',
+    component: Video
+  },
 ]
 
 const router = new VueRouter({

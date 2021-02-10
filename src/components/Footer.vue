@@ -1,7 +1,9 @@
-<template>
+<template #footer>
     <div>
-       
-            <b-card
+       <br>
+       <br>
+       <br>
+         <b-card
                 overlay
                 img-src="https://picsum.photos/900/250/?image=3"
                 img-alt="Card Image"
@@ -13,6 +15,8 @@
                     Mejores memes
                 </b-card-text>
             </b-card>
+                
+           
        
 </div>
 </template>
