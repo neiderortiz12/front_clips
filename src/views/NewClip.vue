@@ -72,7 +72,7 @@ export default {
                 console.log(res);
             });
         }
-    }/*,
+    },
     mounted:function(){
         let direccion = "http://localhost:8000/api/clips/create";
         axios.get(
@@ -85,7 +85,7 @@ export default {
         ).then(data=>{
             console.log(data.data);
         });
-    }*/
+    }
 }
 </script>
 
