@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Dashboard from  '../views/Dashboard.vue'
 import NewClip from '../views/NewClip.vue'
-
+import Register from '../views/Register.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -29,6 +29,11 @@ const routes = [
     path: '/newclip',
     name: 'NewClip',
     component: NewClip
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
   }
 ]
 

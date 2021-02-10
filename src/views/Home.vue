@@ -59,6 +59,8 @@ export default {
       .then(data => {
         if (data.data.res == true){
           localStorage.token = data.data.token;
+          localStorage.name = data.data.name;
+          localStorage.id = data.data.id;
           console.log("todo correcto");
           this.$router.push('dashboard');
         }else{

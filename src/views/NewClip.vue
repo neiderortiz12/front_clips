@@ -2,7 +2,7 @@
     <div>
         <Header/>
         <div class="container">
-            <form ction="" v-on:submit.prevent="crearalgo();"  enctype="multipart/form-data">
+            <form ction="" v-on:submit.prevent="createNewClip();"  enctype="multipart/form-data">
                 <div >
                     <label for="" >Nombre</label>
                     <div >
@@ -37,7 +37,6 @@
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import axios from 'axios'
-//import axios from 'axios'
 
 export default {
     name:"NewClip",
@@ -61,7 +60,7 @@ export default {
             this.clip = event.target.files[0];
             console.log(event);
         },
-        crearalgo(){
+        createNewClip(){
             console.log("esta en la funcio");
             console.log(this.clip);
             const fr = new FormData()
@@ -73,25 +72,7 @@ export default {
                 console.log(res);
             });
         }
-    }
-        /*
-        processFile(event){
-            this.clip = event.target.files[0];
-            console.log(event);
-        },
-        createNewClip:function(){
-            let direccion = 'http://localhost:8000/api/clips/create';
-            let formData=new FormData();
-            formData.append('clip',this.clip);
-            formData.append('datos',JSON.stringify(this.form));
-            console.log(formData);
-            console.log(this.form);
-            axios.post(direccion, formData).then(data=>{
-                console.log(data);
-            });
-        }
-
-    }*//*,
+    }/*,
     mounted:function(){
         let direccion = "http://localhost:8000/api/clips/create";
         axios.get(

@@ -29,13 +29,39 @@
             <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
             <template #button-content>
-                <em>User</em>
+                <em>{{user}}</em>
             </template>
             <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            <b-dropdown-item href="#" v-on:click="logOut()">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
         </b-navbar-nav>
         </b-collapse>
     </b-navbar>
     </div>
 </template>
+
+<script>
+import axios from 'axios'
+export default {
+    
+    name:"Header",
+    data(){
+        return{
+            user:localStorage.getItem('name')
+        }
+    },
+    mounted:function(){
+        
+    },
+    methods:{
+        logOut(){
+            let direccion = "http://localhost:8000/api/logout";
+            axios.post(direccion,{"hola":"hola"},{headers:{Authorization:'Bearer '+localStorage.getItem('token')}}).then(data =>{
+                console.log(data);
+            });
+            console.log("si ingresa al metodo de singotu");
+        }
+    }
+
+}
+</script>
