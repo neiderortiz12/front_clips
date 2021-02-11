@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header/>
+    
       <b-container>
         <div class="mt-2">
           <h4>Desarroladores</h4>
@@ -24,18 +24,18 @@
         </div>
       </b-container>
 
-    <Footer/>
+    
   </div>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
-import Footer from "@/components/Footer.vue";
+//import Header from "@/components/Header.vue";
+//import Footer from "@/components/Footer.vue";
 
 export default {
   components: {
-        Header,
-        Footer,
+        //Header,
+        //Footer,
     },
 }
 </script>

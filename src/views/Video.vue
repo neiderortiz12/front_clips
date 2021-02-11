@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
-import Footer from "@/components/Footer.vue";
+//import Header from "@/components/Header.vue";
+//import Footer from "@/components/Footer.vue";
 import axios from "axios";
 
 export default {
@@ -33,8 +33,8 @@ export default {
         
     },
     components: {
-        Header,
-        Footer,
+        //Header,
+        //Footer,
     },
     mounted: function () {
         let direccion = "http://localhost:8000/api/clips";

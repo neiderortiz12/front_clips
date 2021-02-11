@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header/>
+
         <h1>Creación de un nuevo clip</h1>
         <h2 class="mt-4">Para añadir un nuevo clip, registra los siguientes datos</h2>
         <div class="container">
@@ -30,14 +30,12 @@
                 </div>
             </form>
         </div>
-        <Footer/>
     </div>
     
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
+
 import axios from 'axios'
 
 export default {
@@ -54,8 +52,8 @@ export default {
         }
     },
     components:{
-        Header,
-        Footer
+        //Header,
+        //Footer
     },
     methods:{
         processFile(event){
@@ -74,7 +72,7 @@ export default {
                 console.log(res);
             });
         }
-    }/*,
+    },
     mounted:function(){
         let direccion = "http://localhost:8000/api/clips/create";
         axios.get(
@@ -87,7 +85,7 @@ export default {
         ).then(data=>{
             console.log(data.data);
         });
-    }*/
+    }
 }
 </script>
 
