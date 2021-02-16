@@ -37,7 +37,7 @@ const routes = [
     component: Register
   },
   {
-    path: '/video',
+    path: '/video/:id',
     name: 'Video',
     component: Video
   },

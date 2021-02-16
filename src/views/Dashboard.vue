@@ -1,36 +1,16 @@
 <template>
     <div ><!--:style="myStyle"-->
         <b-container>
-        <div class="dash">
-            <div  v-for="clips in ListaClips" :key="clips.id">
-                <video v-on:mouseover="mousehover" v-on:mouseleave="mouseleave" v-bind:controls="micasa" class="vide"  ref="video" >
-                    <source :src="'http://localhost/clips' + clips.clip" type="video/mp4">
-                </video>
-                    
+            <div class="dash">
+                <div  v-for="clips in ListaClips" :key="clips.id">
+                    <video v-on:click="editar(clips.id)" v-on:mouseover="mousehover" v-on:mouseleave="mouseleave" v-bind:controls="micasa" class="vide"  ref="video" >
+                        <source :src="'http://localhost/clips' + clips.clip" type="video/mp4">
+                    </video>
+                </div>
             </div>
-        </div>
-
-            <!--<b-container fluid="lg" class="bv-example-row">
-                <b-row cols="4" class="row-cols-4" >
-                    <div v-for="clips in ListaClips" :key="clips.id" class="">
-                        <b-col class="videoWrapper ">
-                            <div class="border border-dark rounded-lg ">
-                                <video  @mouseover="repro()" width="250" height="250" id="clips.nombre" ref="video" controls>
-                                    <source :src="'http://localhost/clips' + clips.clip" type="video/mp4" />
-                                </video>
-                                <a class="underlineHover" href="/video"><h1>{{ clips.nombre }}</h1></a>
-                                
-                            </div>
-                        </b-col>
-                            <br>
-                            
-                    </div>
-                </b-row>
-            </b-container>-->
-
         </b-container>
     </div>
-    
+
 </template>
 
 <script>
@@ -58,6 +38,9 @@ export default {
         },
         mouseleave: function(){
             this.micasa=false;
+        },
+        editar(id){
+            this.$router.push('/video/' + id);
         }
 
         /*repro() {
